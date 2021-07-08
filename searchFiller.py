@@ -22,7 +22,6 @@ letters_only = re.sub("[^\d-]",  # Search for all non-letters
 
                           " ",          # Replace all non-letters with spaces
                           str(result))
-print(letters_only)
 
 
 
@@ -53,11 +52,7 @@ with open('Output.txt') as f:
         lines = f.readlines()
         count= len(open('Output.txt').readlines())
         countAsStr=str(count)
-        print("There are: "+countAsStr+" lines")
-
         withoutDuplicates =remove_dupli(lines)
-        print(withoutDuplicates)
-
         count= len(remove_dupli(lines))
         withoutDuplicatesStr= str(withoutDuplicates)
         countAsStr=str(count)
@@ -65,17 +60,6 @@ with open('Output.txt') as f:
 
         #string_match(withoutDuplicatesStr,"-")
 
-        file2 = open("file2.txt","w")
-        always_print = False
-        for line in lines:
-            if always_print or "-" in line:
-                print(line)
-                file2.write(line)
-                always_print = True
-
-        #tempsearch=withoutDuplicatesStr.find("-")
-        #if "-" in withoutDuplicatesStr:
-        #    print("found ")
 
 
 
@@ -85,5 +69,15 @@ with open('Output.txt') as f:
             f.close()
         f.close()
 
+stringwithchar= withoutDuplicatesStr.split('-')
+
+
+
+
+f = open("demofile2.txt", "a")
+for  x in withoutDuplicates:
+    
+    f.write(x)
+f.close()
 
 
